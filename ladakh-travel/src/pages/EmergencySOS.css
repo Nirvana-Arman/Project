@@ -1,0 +1,409 @@
+
+/* HEADER */
+.sos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 52px 20px 14px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+.sos-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.sos-back {
+  font-size: 24px;
+  color: #1a1a2e;
+  cursor: pointer;
+}
+
+/* HERO */
+.sos-hero {
+  background: linear-gradient(160deg, #1a0000, #3a0000, #1a0000);
+  padding: 48px 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s;
+}
+.sos-hero.active {
+  background: linear-gradient(160deg, #3a0000, #c62828, #3a0000);
+}
+
+/* RINGS */
+.sos-rings {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sos-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(198, 40, 40, 0.2);
+  animation: none;
+}
+.ring1 { width: 200px; height: 200px; }
+.ring2 { width: 260px; height: 260px; }
+.ring3 { width: 320px; height: 320px; }
+.sos-ring.pulse {
+  animation: ringPulse 1.2s ease-out infinite;
+}
+.ring2.pulse { animation-delay: 0.3s; }
+.ring3.pulse { animation-delay: 0.6s; }
+
+@keyframes ringPulse {
+  0%   { transform: scale(0.95); opacity: 0.6; }
+  50%  { transform: scale(1.05); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.6; }
+}
+
+/* SOS BUTTON */
+.sos-btn {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #e53935, #b71c1c);
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0 0 0 8px rgba(198,40,40,0.2),
+    0 0 40px rgba(198,40,40,0.4),
+    0 8px 32px rgba(0,0,0,0.5);
+  transition: transform 0.15s, box-shadow 0.15s;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sos-btn.pressing {
+  transform: scale(0.95);
+  box-shadow:
+    0 0 0 12px rgba(198,40,40,0.3),
+    0 0 60px rgba(198,40,40,0.6),
+    0 4px 20px rgba(0,0,0,0.5);
+}
+.sos-btn.active {
+  animation: sosPulse 0.8s ease-in-out infinite;
+  background: radial-gradient(circle at 35% 35%, #ff5252, #c62828);
+}
+@keyframes sosPulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 0 8px rgba(198,40,40,0.3), 0 0 40px rgba(198,40,40,0.5); }
+  50%       { transform: scale(1.05); box-shadow: 0 0 0 16px rgba(198,40,40,0.15), 0 0 60px rgba(198,40,40,0.7); }
+}
+
+.sos-btn-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.sos-label {
+  font-size: 38px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.sos-sub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+}
+.sos-counting {
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+.sos-calling-text {
+  font-size: 10px;
+  color: rgba(255,255,255,0.8);
+}
+
+/* PROGRESS RING */
+.sos-progress-ring {
+  position: absolute;
+  inset: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  pointer-events: none;
+}
+
+/* STATUS */
+.sos-status-text {
+  padding: 16px 20px;
+  text-align: center;
+  background: #fff;
+}
+.sos-hint {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+  line-height: 1.5;
+}
+.sos-active-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.sos-alert-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #c62828;
+  margin: 0;
+}
+.sos-cancel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffebee;
+  color: #c62828;
+  border: 2px solid #c62828;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* LOCATION CARD */
+.sos-section {
+  padding: 0 16px 16px;
+}
+.sos-location-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.sos-location-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sos-loc-icon {
+  width: 42px;
+  height: 42px;
+  background: #e3f2fd;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #1565c0;
+}
+.sos-loc-info { flex: 1; }
+.sos-loc-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+.sos-loc-sub {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+/* TOGGLE */
+.sos-toggle {
+  width: 48px;
+  height: 26px;
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.sos-toggle.on  { background: #1565c0; }
+.sos-toggle.off { background: #ccc; }
+.sos-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  transition: left 0.3s;
+}
+.sos-toggle.on  .sos-toggle-thumb { left: 25px; }
+.sos-toggle.off .sos-toggle-thumb { left: 3px; }
+
+.sos-coords {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #f5f9ff;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #555;
+}
+.sos-coords-icon { color: #1565c0; }
+.sos-map-link {
+  margin-left: auto;
+  font-size: 12px;
+  color: #1565c0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* CONTACTS */
+.sos-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.sos-section-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.sos-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #e3f2fd;
+  color: #1565c0;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.sos-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+.sos-contact-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1565c0, #0288d1);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sos-contact-info { flex: 1; }
+.sos-contact-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 2px;
+}
+.sos-contact-phone {
+  font-size: 13px;
+  color: #555;
+  margin: 0 0 4px;
+}
+.sos-contact-tag {
+  font-size: 10px;
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.sos-contact-actions {
+  display: flex;
+  gap: 6px;
+}
+.sos-action-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.sos-action-btn.call   { background: #e8f5e9; color: #2e7d32; }
+.sos-action-btn.edit   { background: #fff8e1; color: #f57f17; }
+.sos-action-btn.delete { background: #ffebee; color: #c62828; }
+
+/* MODAL */
+.sos-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: flex-end;
+  z-index: 999;
+}
+.sos-modal {
+  background: #fff;
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px 40px;
+  width: 100%;
+}
+.sos-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+}
+.sos-modal-header ion-icon {
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+}
+.sos-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  outline: none;
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+.sos-input:focus { border-color: #1565c0; background: #fff; }
+.sos-save-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #c62828, #e53935);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.bottom-space { height: 40px; }

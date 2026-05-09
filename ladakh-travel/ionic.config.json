@@ -1,0 +1,7 @@
+{
+  "name": "ladakh-travel",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
